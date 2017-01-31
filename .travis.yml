@@ -1,5 +1,14 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.3.1
+- jruby-head
+- jruby-9.1.5.0
 before_install: gem install bundler -v 1.12.5
+deploy:
+  provider: rubygems
+  api_key:
+    secure: FMKsRBQJRUwHVGY49Ta1y94Rq18kvJHfpzw3uVTqoGKg9FAvSLmwR6h1jzQeA+y/7CP5TzvILgVTVKOizK30hWpHRnJ8Lj74almvxmRB6DRJy4XqtUfT6m4SWDbkPepP40Oilh10g9jfk8b0eqfPnRhDFnxjutfq7VTu1kPMxPHvasRvqPc48uG0blEhZHSKGrkBEraYelwouf3EtcKQ9vGGEvnt71AdeYyCig6pIaQnBpEdYh8uFs1B2zmco+MGg4zqe42m5UCl98czdM+5vPG9zpVI0GUjA9mYAgvf4hmWqN1E+oLRlqYgzR3Zxn0OPl67byttRXngaCr0f3NXB7mgR0CVQi1e2eMIerH1MOHsQE1jf2kWnTn5A09EorrFsTviKNHMeYsXYKnxTcOumnhv32piy3JRxRE/fbkCwztaobwL2jx/uy1/IYRXbO+ztbBbWmHqxu7g3CSorCdNQfg1PLLlmEuZFfyZi8que3m9/OrLtGCQCUuQDikKoBim9wTkmU2OIYwL8WcQ3B+VnUW7LugEuW8J9ntJQ9f4xPF85AbNY88kZLDfNiBcul+98x4wiHIdcCho+8VNL8sSS6qaZDDJOYh50D/xaqkYMdbNZ1QOT3DTpGm8kOeeFRux1Klk2ZVezzC+DVY/bD/+lTd9DQqgSerL5Yh2h+PQS14=
+  gem: penelope-worker
+  on:
+    tags: true
+    repo: jgnagy/penelope-worker
